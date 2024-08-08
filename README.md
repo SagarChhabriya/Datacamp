@@ -202,4 +202,16 @@ When you run this, it will ask you to fill in some details about the package you
  
 
 
+## Version numbers and history
+1. **Final files**<br><br>
+In the last lesson you saw that cookiecutter created these two new files, contributing and history. The contributing file is either a markdown or reStructured-text file. This is your call out to other developers for help, and is the first place another developer will look if they are interested in assisting with your package. It is up to you what information you choose to include in this file. You might ask potential developers to join a mailing list, or to email you, or how they can get involved via Github. The standard contributing file which cookiecutter creates, is a great place to start, but you can change it if you'd like to send out a different message to potential collaborators. The history file is really important for your users. In chapter two, we said that a package's history file is used to figure out which versions of a package will work with your package. There are different terms for this file, you might hear it being called the `history`, `change-log` or `release notes`, but they are all the same thing. The history file will tell your users the important things that have changed between the previous and new releases. This allows them to figure out which versions of your package they should use. <br><br>
 
+![image](https://github.com/user-attachments/assets/be39f1f8-3100-4f3b-887d-51cbc7551eaf)
+
+When you make changes, and are ready to make a new release, you will need to increase the version number. Only one copy of the package can be associated with each version number. So PyPI won't let you upload a copy with a version number you have used before. There are two places in the package where you must update the version number. The setup-dot-py file and the top level init-dot-py file.The version number in the setup file is used by pip and PyPI. The version number in the init file is included for the user, and it is best-practices to include this. It allows them to print and use the package version.
+
+![image](https://github.com/user-attachments/assets/f7d289f8-5eb6-462f-bcb3-6f1bc48946ee)
+
+2. **bumpversion** <br><br>
+These version numbers can be updated simultaneously using the simple bump-version tool. This tool is used from the terminal and will search through your package and increase the version number in appropriate places. You simply need to navigate to the top of your package and run bump-version with the argument major, minor or patch, and it will increase the major, minor or patch number.
+`bump major` `bump minor` `bump patch` 

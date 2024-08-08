@@ -78,3 +78,40 @@ Now that you have built your distributions the only thing left to do is upload t
 
 1. **How other people can install your package**<br><br>
 Once you've done this, your package is live and anyone can install it using PIP. It is also possible to install your package from Test-PyPI using a longer command. You specify the index-url which is where the package is downloaded from, and the extra-index-url which is where PIP can search for your dependency packages.<br><br>
+
+
+## Testing Your Package
+
+You have completed every step required to transform some loose code into a package hosted on PyPI. In this chapter we are going to focus on bringing your code up to an even higher standard. And the first step on this journey is testing.<br><br>
+
+1. **The art and discipline of testing**<br><br>
+When you are writing code, you will probably be performing small tests along the way to make sure it's working. Imagine you are writing this function to return the first and last element in a list. You might test it like this. This is the basic idea of testing, but in a good package, instead of just running this test once, you would save the code used to run this test. This means every time you make changes you can run all your tests again, to make sure your changes haven't broken anything.<br><br>
+
+<p align="center"> <img src="https://github.com/user-attachments/assets/6c0f1a42-8725-489c-9643-52d6428f0cb0" alt="test" width="700"></p><br>
+
+2. **Writing tests** <br><br>
+Each function in your package should have a test function. Here the test function for get-ends is defined. It runs the get-ends function on a list and makes sure get-ends returns the correct answer. If get-ends returns the correct answer then the test function passes. If something is wrong with get-ends, then this test function raises an assertion error. You can also include multiple assert statements to test your function in different ways.<br><br>
+
+  <table>
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/afb4a9e3-b2c1-4075-b2e2-0b6208060c5b" alt="test" width="400" /></td>
+      <td><img src="https://github.com/user-attachments/assets/7598894e-e60d-436a-8b8d-ada76f4ef2a3" alt="test" width="400" /></td>
+    </tr>
+  </table>
+  <br><br>
+
+3. **Organizing tests inside your package** <br><br>
+You should keep these tests in their own directory which is in the top folder of the package. The best way to lay out the tests directory is to copy the structure of the code directory. The test directory has an empty init file and the preprocessing subdirectory. Inside this subdirectory is the test-normalize module. The test-normalize module should contain all the tests for functions in the normalize module. Every other module in the code directory should have its own test module in the test directory.
+
+<p align="center"> <img src="https://github.com/user-attachments/assets/8bad6a1d-b72c-4ea8-9391-7818a457ba2f" alt="organizing-directories" width="700"></p><br><br>
+
+4. **Organizing a test module** <br><br>
+Inside the test module, there should be a test function for each function defined in the source module. Remember that you will need to import the functions you are testing from the main package. This should be done using an absolute import. In this course we are only going to use these simple assert statements for testing, but if your package has more complex functions you will need more complex tests. If you'd like to learn more, you can take this great course on writing more complex tests here on DataCamp.
+
+<p align="center"><img src="https://github.com/user-attachments/assets/fb2726b3-0312-4b16-991e-58ca45879f10" alt="assert-image" width="700"></p><br><br>
+
+5. **Running tests with pytest** <br><br>
+Once you have written these tests you can run them all at once using pytest. From the terminal all you need to do is navigate to the top of your directory, and then run the pytest command. Pytest will look inside the test directory, and search for all modules that start with test-underscore. Inside those modules it will look for all functions that start with test-underscore, and it will run these functions.If a test fails then pytest will highlight this so you can fix it.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/d94f0588-b83e-4888-b87e-cb4f6236c84a" alt="running-tests-with-pytest" width="700"></p>
+

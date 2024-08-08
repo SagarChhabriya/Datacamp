@@ -115,3 +115,29 @@ Once you have written these tests you can run them all at once using pytest. Fro
 
 <p align="center"><img src="https://github.com/user-attachments/assets/d94f0588-b83e-4888-b87e-cb4f6236c84a" alt="running-tests-with-pytest" width="700"></p>
 
+## Testing your package with different environments
+1. **Testing multiple versions of Python** <br><br>
+But if you are trying to write a package which will work with multiple versions of Python, then you will need to test each version separately. This means `you will need to install the versions of Python you would like to support`, install your package and all of its dependencies within each Python version and run pytest. An easier way to test multiple Python versions, and the most common way, is to use a tool called tox.<br><br>
+<P align="center"><img src="https://github.com/user-attachments/assets/9dbed3dc-4158-43ba-8645-578c54762bb2" alt="setup-tools" width="700"></P><br><br>
+
+2. **What is tox?**<br><br>
+Tox is a tool specifically built to run package tests with multiple versions of Python. You can run tox from the terminal, just like pytest.<br><br>
+
+3. **Configure tox**<br><br>
+In order to use tox, you need to create a configuration file telling tox what to run in each environment and also which Python versions to use. The configuration file must be named tox-dot-ini and needs to be placed in the top level of the package, alongside the setup-dot-py file.<br>
+<p align="center"> <img src="https://github.com/user-attachments/assets/fb58dbfd-ddb8-43c3-b16e-8e8f7c955e4f" alt="config-tox" width="700"></p><br><br>
+
+
+Inside the file you need to create the tox heading like this. You will then specify the versions of Python you want to test using the envlist parameter. Here we are testing python 2.7, 3.5, 3.6 and 3.7. You need to have these versions of Python already installed on your computer. Tox won't install new python versions. Using each of these versions of Python, tox will install your package and its dependencies. Under the testenv heading you need to tell tox what you want it to do once it has installed your package. You use the commands parameter to tell tox to run pytest. However, pytest isn't installed by your package dependencies, so you need to specify pytest as a tox dependency. You could actually add any commands you like to the commands list and tox will run them all. These need to be shell commands, which you could run from the terminal.<br>
+<p align='center'><img src='https://github.com/user-attachments/assets/c8589511-3659-4501-9ccf-497692241d98' alt='tox.ini' width='700'></p><br><br>
+
+4. **Running tox** <br><br>
+To run tox, all you need to do is navigate to the top of your package and run the `tox` command.<br><br>
+<p align='center'><img src='https://github.com/user-attachments/assets/7279d686-3ffd-4bd7-8241-3ede1f249fde' alt='running-tox' width='1000'></p>
+
+<p align='center'><img src='https://github.com/user-attachments/assets/34019bb5-c4b5-42fd-b351-ddd8ebd3d728' alt='exercise' width='1000'></p>
+
+<p align='center'><img src='https://github.com/user-attachments/assets/d6d5af41-275c-48d0-a400-4b5cfba1c80e' alt='exercise' width='1000'></p>
+
+### Now, Run the `tox` command.
+

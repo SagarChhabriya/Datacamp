@@ -32,3 +32,30 @@ To make the package installable, you need to add a new file to the package the s
   </tr>
 </table>
 
+
+## Including licences and writing READMEs
+1. **Why do I need a license?** <br><br>
+The license is a really important file for code you want to share online. If you host your package online, but do not include a license, then you are not giving permission to other people to share, modify or even use the code! Many great packages are open source and may be freely modified and shared by other users. This openness has led to the success of many of these packages as they have attracted developers to work on them.<br><br>
+
+1. **Open source licenses**<br><br>
+There are lots of different licenses you might include, and we can't go into all of these in this course. If you would like to open source your package, then I thoroughly recommend you to find out information about these license choices here. All of the open source licenses on this popular website allow individuals to use your package themselves, and to modify and share it. Some licenses might require modified versions of the package to be open sourced, and shared with the same license you used. [Click Here](https://choosealicense.com)
+
+
+1. **What to include in a README** <br><br>
+What you include is mostly up to you, but a good README will have the `package title`; a `description of the package` including its most important features; instructions on how to install the package; some example uses to get started; a section on how to contribute to the package code; and a brief note on the type of license used.
+
+1. **README format**<br><br>
+Just like there are multiple formats for documentation, there are two formats used for READMEs - `reStructuredText` and `markdown`. In this course, you'll use markdown to write your README. It is slightly simpler than reStructuredText and is a common choice in the wild. Most of what you write in markdown will be easy to convert to reStructuredText if you ever need a more complex README.
+
+1. **Commonmark** <br><br>
+There are some slightly different versions of markdown out there. But the version for READMEs is called `commonmark`. Commonmark is a file format like HTML, but is much much simpler.
+
+1. The license and README files should be added to the top directory, alongside the setup script and the requirements file.<br><br>
+
+1. **MANIFEST.in** <br><br>
+There is one last file you will need to create before you can release your package to the world. This is the manifest-dot-in file. This file is used to list all of the extra files that you want to distribute along with your package. This manifest file is important because by default your license will not be included when someone downloads your package, and neither<br><br>
+  *MANIFEST.in*
+  ```manifest.in
+  include LICENSE
+  include README
+  ```

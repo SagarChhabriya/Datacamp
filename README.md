@@ -163,7 +163,8 @@ Remember that PEP8 is only a guide, so you might bend these rules occasionally. 
   <tr>
     <td><img src="https://github.com/user-attachments/assets/469a3a09-ca18-4376-88fc-dcd5b2ce765a" alt="image1" width="300"></td>
     <td><img src="https://github.com/user-attachments/assets/df25a1cb-4c05-48d2-aae7-7f1392ece332" alt="image2" width="300"></td>
-    <td><img src="https://github.com/user-attachments/assets/471c2140-39b1-487a-917c-b068afce21b3" alt="image3" width="300"></td>
+    <td><img src="https://github.com/user-attachments/assets/7424d059-1d2d-4425-866f-61aaf34bcdc4" alt="image3" width="300"></td>
+
   </tr>
 </table>
 Blank Space before 6.
@@ -184,5 +185,11 @@ We can save these settings for flake8 by creating a setup-dot-cfg file in the pa
 
 
 You can run flake8 on the whole package at once by navigating to the top of the package, and running flake8 from the terminal. You can run flake8 on the whole package at once by navigating to the top of the package, and running flake8 from the terminal.
+<p align='center'><img src='https://github.com/user-attachments/assets/a10fe7fa-0551-4ec4-9b5f-ff329e7eb75c' alt='running-tox' width='1000'></p>
+
+
+## Faster package development with templates
+
+
 
 

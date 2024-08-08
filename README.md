@@ -141,3 +141,48 @@ To run tox, all you need to do is navigate to the top of your package and run th
 
 ### Now, Run the `tox` command.
 
+## Introducing flake8
+Good code is read many more times than it is written, and so to help the reader, and yourself, we use the standard Python style guide, PEP8. This covers how variables and functions should be named, and generally how your code should be laid out. Following these conventions makes your code easier for others to understand and use. When developing code, it can be hard to spot bugs when you are writing it; that's why we use pytest. Similarly, it can be hard to spot every place where you have deviated in style; for this we use flake8.<br><br>
+
+1. **Running flake8**<br><br>
+Flake8 is a static code checker, which means it reads through your code without actually running it. Here we run flake8 from the terminal, passing it one of our modules to evaluate. It prints a series of style improvement suggestions. The output includes the file name, then the line number, then the character number of the violation, and a problem code and description.<br><br>
+
+<table style="width:100%; text-align:center;">
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/539b952f-70c5-49b8-87fb-e43afd107aef" alt="flake8" width="700" height='250'></td>
+    <td><img src="https://github.com/user-attachments/assets/9acf3d04-580d-4311-82f4-323eddfc9bfb" alt="flake8" width="700" height='250'></td>
+  </tr>
+</table>
+
+If we make the suggested changes and run flake8 again, it prints nothing, meaning our code is stylish.
+
+2. **Breaking the rules on purpose**<br><br>
+Remember that PEP8 is only a guide, so you might bend these rules occasionally. For example, PEP8 says that after an equals sign, you should have only one space, but you might find that these two expressions. Become clearer if you add an additional space. If you made this choice, flake8 would notify you about it every time, which could get annoying. You can stop this by placing a noqa comment on the line. This stands for no quality-assurance. Now flake8 won't evaluate this line of code. If we include a violation code after noqa, then flake8 will evaluate the line but ignore this particular type of violation.<br>
+
+<table style="width:100%; text-align:center;">
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/469a3a09-ca18-4376-88fc-dcd5b2ce765a" alt="image1" width="300"></td>
+    <td><img src="https://github.com/user-attachments/assets/df25a1cb-4c05-48d2-aae7-7f1392ece332" alt="image2" width="300"></td>
+    <td><img src="https://github.com/user-attachments/assets/471c2140-39b1-487a-917c-b068afce21b3" alt="image3" width="300"></td>
+  </tr>
+</table>
+Blank Space before 6.
+
+3. **flake8 settings**<br><br>
+It is possible to ignore specific errors using flake8 without adding comments. For the previous case, we could use flake8's ignore flag and pass it a list of violation codes to ignore. Or if we only want to search for a specific set of violations, we can select those. Here we search for unused imports and variables.<br><br>
+
+
+4. **Choosing package settings using `setup.cfg`** <br><br>
+We can save these settings for flake8 by creating a setup-dot-cfg file in the package directory. In this config file, we create a section header for flake8 and then define the settings we want. For example, we'll ignore line spacing in all modules, and we will exclude setup-dot-py from being evaluated. We can also tell flake8 to ignore specific violations in particular files. Here we tell it to ignore extra spaces, but only in the main module of this example package. When we use flake8 inside our package, these settings will be used without us having to specify them.<br><br>
+
+<table style="width:100%; text-align:center;">
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/4d2f7db1-9e6d-4010-835c-406d4dab61ea" alt="image1" width="500" height="300"></td>
+    <td><img src="https://github.com/user-attachments/assets/68caf11f-c78e-448a-b01b-22470d16ea82" alt="image2" width="500" height="300"></td>
+  </tr>
+</table>
+
+
+You can run flake8 on the whole package at once by navigating to the top of the package, and running flake8 from the terminal. You can run flake8 on the whole package at once by navigating to the top of the package, and running flake8 from the terminal.
+
+

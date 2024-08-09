@@ -238,5 +238,16 @@ You can use the makefile functions by navigating to the top of your package and 
 You can also get a summary of the commands available in the Makefile by using the make `help command`. This lists the functions in the makefile as well as what they do.
 
 ### Exercises
-<p align="center"><img src="https://github.com/user-attachments/assets/cf79d355-a78c-4c84-b05a-97adb2281a49" alt="exercise" width="700"></p><br><br>
-commands: `make clean` `make test` `make dist`
+<p align="center"><img src="https://github.com/user-attachments/assets/cf79d355-a78c-4c84-b05a-97adb2281a49" alt="exercise" width="1000"></p><br><br>
+
+commands: `make clean` `make test` `make dist` <br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/9ceed602-a756-4c74-a502-d71b07ca1104" alt="recap" width="700"></p>
+
+6. **Further topics**<br><br>
+You already have the skills you need to start creating great packages, but at some point you will need to start writing more complex tests for your package. And for this, there is a great course right here on DataCamp that goes more in-depth than we could here. You also might want to create a website for your package documentation. Thanks to tools like sphinx and websites like read-the-docs, this is easy and free. You can find out more about this here.<br><br>
+
+  - Advanced `pytest`
+    -[Unit Testing for Data Science in Python](https://learn.datacamp.com/courses/unit-testing-for-data-science-in-python) 
+  - Package Website
+    -[ReadDocs and Sphinx](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html) 

@@ -1,4 +1,4 @@
-
+![image](https://github.com/user-attachments/assets/4aae289d-0510-49ab-ada9-30a023b66bf3)
 # Software Engineering Principles in Python
 
 ## Table of Contents
@@ -56,6 +56,31 @@ The output shows us the exact location of any violations by showing the file nam
 # Chapter 2: Writing a Python Module
 
 ## Write your first package
+
+1. **Package structure**<br><br>
+A minimal python package consists of 2 elements: a directory and a python file. You can see the basic structure here. The name of the directory will be the name of the package, but how should you name it? We can turn to PEP 8 again for some guidance.To paraphrase, PEP 8 states that packages should have short, all-lowercase names. The use of underscores in a package name is discouraged, but you can and should use them if it improves readability. Outside of this, you have the freedom to brand as you'd like. I'd suggest picking a name that conveys the functionality of the package.<br><br>
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/92446052-cd30-4f70-a706-b61de916eed3" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/91ca61f1-8af5-4f20-a06a-9e78a85eda45" width="500"></td>
+  </tr>
+</table>
+<br><br>
+
+The file in our newly branded directory doesn't have any flexibility in naming. We must name it underscore underscore init underscore underscore dot py. This file lets python know that the directory we created is a package. And that's it! With this structure we've created a package that we can import just like we would import numpy or any other package. Note that as of Python version 3-point-3 any directory can be imported as if it were a package without error even if it doesn't follow this structure. Earlier versions of Python would throw an error if you tried to import an improperly formatted package. Even though a directory might import without error, you will run into issues if you do not follow this structure.<br><br>
+
+2. **Importing a local package**<br><br>
+So how do we import our package? Before we look at some code let's establish where our script is relative to our new package. We'll be working in the my_script dot py file that's in the same location as our package directory.<br><br>
+<p align="center"><img src="https://github.com/user-attachments/assets/e5d49ebe-5406-4fc6-a1e6-3fa2af11ed27" width="700"></p><br><br>
+
+With all the setup we've done so far, importing the package is a breeze. At the top of our script, we can use import my_package. Just for an added bonus, let's check out what happens if we try to call help on our package. We get some minimal information with python letting us know that it is indeed a package and additionally we see the location of our __init__ dot py file. As we previously covered, it's up to the developer to add in useful documentation to be printed whenever a user calls help. Later we will be going over how we can add this documentation as well as implementing some functionality to make our package more useful.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/801e31e8-2b41-4ebf-9011-111e4d2bf3f8" width="700"></p>
+
+### Exercises
+<p align="center"><img src="https://github.com/user-attachments/assets/87f10653-5e63-4996-90e4-02092ba8786b" width="700"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/bf85677d-c3dd-42b0-a656-f58eb9d28f02" width="700"></p>
 
 ## Adding Functionality to your package
 

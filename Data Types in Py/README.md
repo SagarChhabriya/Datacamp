@@ -117,6 +117,7 @@ Overview of numeric data types such as integers and floats, including their oper
 
 
 
+
 ## Booleans - The Logical Data Type
 Explanation of boolean values (`True` and `False`), and their role in logical operations and conditional statements.
 ![image](https://github.com/user-attachments/assets/1e6d4661-6001-415c-b84f-e19eff3f8301)
@@ -134,14 +135,27 @@ Introduction to sets, their unique properties, and how they are used for efficie
 ![image](https://github.com/user-attachments/assets/267528f1-1d49-419e-8077-91bf644e1adf)
 ![image](https://github.com/user-attachments/assets/d2273036-a335-44e9-82e3-d391cd0a0673)
 ![image](https://github.com/user-attachments/assets/acde8c97-f88a-49d5-8e45-b477bfeb23dc)
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/e8e13dbb-6381-4111-a401-2124151987ed)
 
 
+### Exercises
+![image](https://github.com/user-attachments/assets/aaeafc62-167a-491e-9f50-6a4bed4c90f1)
+![image](https://github.com/user-attachments/assets/117dc8a8-0a02-4b53-b953-f8ddacbe6e33)
+![image](https://github.com/user-attachments/assets/82a43467-e4f4-42d2-ab65-87f37d148d49)
+![image](https://github.com/user-attachments/assets/7132236a-a05b-43b2-8787-c6fd7fc1746d)
+![image](https://github.com/user-attachments/assets/937df8d4-ab95-4063-9b30-31baf6f82bc0)
+![image](https://github.com/user-attachments/assets/c5eeddf8-2199-4209-a0bd-8f92fb197e11)
+![image](https://github.com/user-attachments/assets/c06e4120-4cf6-4ab9-bd6d-f3079bf7a0cf)
+![image](https://github.com/user-attachments/assets/dfa043f1-04b9-45f8-b976-69622043259c)
 
 # Chapter 4: Advanced Data Types
 
 ## Counting Made Easy
 Techniques and tools for efficiently counting occurrences of elements in data structures.
+![image](https://github.com/user-attachments/assets/2119494c-ca19-483b-9ee2-723bef9cda74)
+![image](https://github.com/user-attachments/assets/0ba5fc13-ff50-4eac-968d-79d2548aaa41)
+![Uploading image.png…]()
+
 
 ## Dictionaries of Unknown Structure - Defaultdict
 Using `defaultdict` to simplify dictionary handling when the structure of data is unknown or varies.

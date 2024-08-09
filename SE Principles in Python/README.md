@@ -112,9 +112,34 @@ In addition to adding additional submodules, you can also build out packages ins
 <p align="center"><img src="https://github.com/user-attachments/assets/e3173812-8070-4f7a-b21e-c64f0fbe2c28" width="700"></p>
 <p align="center"><img src="https://github.com/user-attachments/assets/95434731-a3b4-4bf1-b057-32f9c7adb32d" width="1000"></p>
 
-
-
 ## Making your package portable
+
+1.**Steps to portability**<br><br>
+The two main steps to sharing a python package are creating setup dot py and requirements dot txt. These two pieces provide information on how to install your package and recreate its required environment. These files list information about what dependencies you've used as well as allowing you to describe your package with additional metadata.Here's how the two files fit into our package structure. They're located at the same level as our package directory. Now let's see what content goes into the files themselves.<br><br>
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/7eebe33d-7d45-4735-b9d7-167f8aaa47e1" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/044cbefb-aaed-47a0-9397-d533cd328545" width="500"></td>
+  </tr>
+</table>
+
+2. **Contents of requirements.txt**<br><br>
+A requirements file shows how to recreate the environment needed to properly use your package. This includes a list of python packages and optionally the version requirements for each package. Here we see 3 different ways to specify our requirements. If we don't have a reason to specify a version we can just list the package name as you see here for matplotlib. If version is important. We can mark a specific version by using a double equals, or mark a minimum version by using greater than or equal. Since open source packages are constantly evolving, specifying a version can be a big help to your users. To leverage our requirements file we can use this pip install command. This installs all the packages listed with respect the correct version. Note that we didn't actually install our package, we just recreated its environment.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/2ba56f02-3c33-4702-8ab1-c41c64610c4b" width="700"></p>
+
+
+3. **Contents of setup.py**<br><br>
+setup dot py is what tells pip how to install our actual package. Additionally, its info will be used by PyPi if you decide to publish. The contents of this in our case contains a single call to the setup function from the setuptools package. There are other options, but setuptools is one of the most common and powerful choices. Here we use just a few of the possible setup arguments. There are many more options available that you can read more about in the setuptools documentation. The argument's names make them fairly self-explanatory; for example, your package's name is assigned to name and so on. Some less obvious arguments in our example are install_requires and packages. packages in essence lists the location of all the init files in our package. Our package has a single init file and it's in the directory 'my_package'. As we saw before, more complex packages might include subpackages with their own init files, if this was the case we would also list their locations here. Until you start writing more complex packages, the contents of the packages list will likely be the same as the name argument. install_requires might look familiar, in the case of our package, the contents are the same as our requirements file.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/8c02d2a4-a985-43a1-bc37-9a994734d2ab" width="700"></p><br><br>
+
+4. **install_requires vs requirements.txt**<br><br>
+An example of when install_requires can differ is if you want to specify where pip should download packages from. This can be specified in the requirements file as you see here. We won't go into much detail here since this advanced option is not often needed in everyday use. To read up more on the differences you can see the documentation linked [here](https://packaging.python.org/discussions/install-requires-vs-requirements/#requirements-files)<br><br>
+
+
+
 
 # Chapter 3: Utilizing Classes
 

@@ -249,8 +249,159 @@ If you're using inheritance it's sometimes hard to remember what attributes and 
 
 ## Documentation
 
+1. **Documentation**<br><br>
+One of the big Software Engineering concepts that all python users benefit from is Documentation.Documentation in python can take the form of comments. Comments in python are led by the pound symbol as you see here. They can sprinkle in information about your code for future collaborators. Another way of documenting code is to use docstrings. Docstrings are invoked by the use of triple quotation marks like you see here. They are typically used to document functions, classes, and scripts for your users. Let's look at both these in a little more detail.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/3a949171-c659-47da-acc6-315947ce02c2" width="700"></p><br><br>
+
+2. **Comments**<br><br>
+Comments are used inline to document what a particular line of code is doing and why. They can appear on their own line or a the end of a line of code. A big difference between docstrings and comments is that comments will not be seen by your users unless they are looking into your source code. The goal of comments is to make your code more readable for both yourself and collaborators.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/e8e883f9-90f8-4569-b6f1-3648139e4731" width="700"></p><br><br>
+
+
+3. **Effective comments**<br><br>
+There is some debate on the usefulness of comments. Take a moment to look at these comments. As you can see, they don't add much value; unless the code is trying to teach someone about Python basics, then these could be useful comments. So it's important to know your audience when commenting. However, a good rule is that comments should explain why a line of code is doing something and not what the line of code is doing. Here is the same code with different comments to explain the why of the code. In my opinion, over-commented code isn't nearly as big of a headache as under-commented code. If you ever question whether or not a comment is useful I would suggest adding the comment.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/24171eb7-f390-45d5-9581-16843066d9f2" width="700"></p><br><br>
+
+
+4. **Docstrings**<br><br>
+Comments are documentation for yourself and collaborators, docstrings are documentation for your users. Docstrings are what python outputs whenever a user calls help on your functions and classes. Let's look at the anatomy of a docstring. The first sections describe the functionality of what we're documenting.Next, we document the parameters and return value of our function. We use this particular syntax with the colons by convention so that downstream tools can take our docstrings and convert them into website based documentation. You can see an example of a webpage generated from a docstring formatted like ours at this link which show's the documentation for the popular Flask package.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/72a50733-09a3-4a15-8125-295085e31d06" width="700"></p><br><br>
+
+[Example webpage generated from a docstring in the Flask package.](https://flask.palletsprojects.com/en/3.0.x/api/#application-object)
+
+5. **Example docstring**<br><br>
+Here we see a docstring actually filled out to describe a function and its usage. It contains a brief description, information on the parameter & return values, and an example showing how the function is used. In the case of this simple function, the optional details section wouldn't add much value so it's been omitted. In addition to the docstring, we see comments explaining why the code was written a certain way, as opposed to what the code is doing.Now that we've written the docstring for the square function, users can access it by calling help. When they do they'll see this print out showing all the information they'd need to understand what it does and use it properly. Note, as mentioned before, the user's don't see our comments that describe our implementation details to future colaborators.<br><br>
+
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/25eae1ce-674b-46a9-b4bc-baa6d3e68764" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/15535bb3-6b82-4dd7-aa79-7333ce2c29b9" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/419290f4-5011-427c-8c02-9ff430c62361" width="500"></td>
+  </tr>
+</table>
+
+
 ## Readability Counts
+
+1. **Readability counts**<br><br>
+Another important step to writing a maintainable project is readable code.<br><br>
+
+2. **The Zen of Python**<br><br>
+Luckily, Python has a big focus on readability, and it comes with a list of guidelines to help write good code. These guidelines are known as the 'Zen of Python', and you can view them through the command 'import this'. Here we see an abridged version. Notice the item stating, 'readability counts', and the rest of the items can guide us in this quest for readability.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/becd4f1c-5307-4656-83c6-b551a4049185" width="700"></p><br><br>
+
+3. **Descriptive naming**<br><br>
+One way to aid in readability is with good naming. Look at these 2 functions. Both implement the same logic. However, if we believe 'readability counts', then the is_boiling function is a better option. The is_boiling function describes what it's doing thanks to descriptive naming. This is known as self-documenting code. However, remember that under-commented is a bigger issue than over-commented code; if you're ever in doubt, add comments. A warning about descriptive names. It's possible to go too far. Modern IDEs have auto-complete so it might not seem like a burden to type long names, but long names can make code hard to read, as you see here. Note, even if your code is self-documenting, your users will appreciate the ability to call help and see all the good information a docstring can provide.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/3a0c26cb-9bcd-4193-8c11-18fa9eecd909" width="700"></p><br><br>
+
+4. **Keep it simple**<br><br>
+Another way to keep your project readable is by writing in simple maintainable units of code. Let's take a look at an example by writing a function to make a pizza.
+
+
+5. **Making a pizza - complex**<br><br>
+Take a look at this code to make a pizza. Notice that the full definition doesn't fit on the slide. Although we're working with a small screen, not being able to fit your function on the screen is a sign that it maybe should be refactored. A less obvious issue is that we have a few different processes happening that could stand on their own. We're making dough and then making a sauce; we might want to be able to make dough outside of the pizza process. Let's do some refactoring.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/b268f804-c6f6-46c9-8b87-04afb1f0d05f" width="700"></p><br><br>
+
+6. **Making a pizza - simple**<br><br>
+Take a second to look at this refactored function. It's easier to see what's happening, in both a functional sense and a literal one since we were able to fully fit it on the screen. By breaking processes out into their own descriptively named functions we can see the high-level process of making a pizza at a glance. An additional benefit of defining these smaller functions is that we now have more modular code that we can easily plug into different recipes that might call for our homemade marinara. These also make writing tests easier, which we'll soon be covering.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/90d9d84c-d945-4bce-8c91-cce9e1610fb7" width="700"></p><br><br>
+
+
+7. **When to refactor**<br><br>
+Our rewrites came about thanks to a couple warning signs. They were that our function was a bit long and we had separate processes happening. You should strive for your functions to accomplish one and only one thing. In our pizza example, we were using comments as 'section headers' to denote different processes; if you're ever doing that then it's a good bet that your code should be split into smaller functions. Another warning sign that your function is doing too much is if it's hard to think of a good meaningful name for it. Unfortunately, you might not notice your code is hard to read until trying to read it the next day. Just strive to do your best, and to repeat once more: document your code with comments and docstrings.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/933a12d3-0bd6-4ffe-8b62-f7cced9793d6" width="700"></p><br><br>
 
 ## Unit testing
 
+1. **Unit testing**<br><br>
+Even well-documented, readable code isn't very useful if doesn't work correctly. That's where testing can come in handy.<br><br>
+
+2. **Why testing?**<br><br>
+With testing, you can confirm your code is working as intended. You probably already run some manual tests. Instead of writing these tests in the console, you could add much more value to your project by adding these to your test suite. A written test can be re-run after you make changes to check if there were any unexpected effects. Also, changes in dependencies can sometimes break your code. Automated tests can alert you problems like this and more. So how do we test in Python? We'll cover 2 easy to use options: doctest & pytest.<br><br>
+
+3. **Using doctest**<br><br>
+Thanks to writing informative docstrings with examples included you've already written tests that can be run with doctest! Let's look at an example with this square function. To use doctest we need to import it and run the testmod command to test our module's examples. When we run the tests we see that it failed. Looks like there was a typo in the docstring that was caught thanks to doctest. If there were no failed tests the output from testmod would be blank.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/d2ed7803-6bae-46fc-837d-8d24d9f03c31" width="700"></p><br><br>
+
+4. **pytest structure**<br><br>
+doctests are great for smaller examples, but you often can't cover every case you want to test in a docstring. For example, if your function returns a large pandas DataFrame this could be hard to include as a doctest. For larger cases, there's pytest. To use pytest, I recommend a tests directory at the same level as your package's directory.Due to pytest's flexibility, there are other options. For example, if developing a larger package it might be useful to break out subpackage tests into their own folders.<br><br>
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/8003fa29-cef4-40df-8bfb-1b441d47957c" width="700"></td>
+    <td><img src="https://github.com/user-attachments/assets/fa131cac-767b-4f0a-819b-911727bd6432" width="700"></td>
+  </tr>
+</table>
+
+5. **Writing unit tests**<br><br>
+Let's write some tests for our Document class. First, notice the test underscore prefix. pytest searches for tests by first looking for files that start or end with the word test, and then pytest runs all the functions in these files who's name follow the same pattern. Within our test method, we've then created an instance of document as our test case. Last, we run the actual test with the assert keyword. As long as the assertion is True, our test passes. When testing, it's also a good idea to test for the 'edge cases' that you can think of. For example, here we could test the expected attributes of a blank Document.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/96b49af5-932e-4b0d-b4e3-5e41653c4922" width="700"></p><br><br>
+
+6. **Writing unit tests**<br><br>
+Note that when testing class objects, it's not wise to compare two objects with double equals. Here we create two identical Document objects and test equality. Our test shows the objects are not the same. Instead, to compare objects we can compare attributes as we see here.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/2f4530bc-526b-4842-8355-3a08b4175dcf" width="700"></p><br><br>
+
+7. **Running pytest**<br><br>
+To run our tests we head to the terminal in our work_dir directory, run the command "pytest", and wait for our output. We see that all of our tests passed and our code is running as expected [1].If we just wanted to run the tests in one file our command might look like this and we'd only get the results for that file's tests.So far all of our tests have passed.[2] Let's look at some output of when things go wrong. In the output, we see exactly which test failed and even how it failed. This information can be a lifesaver when your projects grow and tracking down bugs becomes a more time-consuming process.[3]<br><br>
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/b563a043-4939-4173-81bf-54662ffccbcf" width="700"></td>
+    <td><img src="https://github.com/user-attachments/assets/ca35f182-e29c-4bfe-8067-31b34dfbcb2b" width="700"></td>
+    <td><img src="https://github.com/user-attachments/assets/f26b08ec-4f1f-4933-a58a-b110882dd2df" width="700"></td>
+  </tr>
+</table>
+
+
 ## Documentation & testing practice
+
+1. **Documenting projects with Sphinx**<br><br>
+Sphinx was mentioned earlier as a tool that transforms docstrings into beautiful documentation. Here we see an example of what your Document class might look like as an HTML page generated by Sphinx. All of this benefit just from writing complete docstrings! If you're managing your project with GitHub or GitLab then you can even host your Sphinx-built documentation for free using the products' services. That way users can search the web to find your helpful documentation.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/50d534cb-fa1a-4c68-8cb0-11abd84693a4" width="700"></p><br><br>
+
+
+2. **Documenting classes**<br><br>
+You might have noticed that the example Sphinx page showed documentation for a class and included information on attributes. Let's take a quick aside to look at the docstring that was used to build the page. This docstring should look mostly familiar, but here are a couple of things to note. We document the parameters for the init method in the class docstring. This way users can see how to initialize a new instance by calling help on the class itself. Next, we document attributes using the 'ivar' keyword. This abbreviation stands for 'instance variable'. With this documentation in place, users can easily see how to use your class.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/e1fc50c7-a9f0-4ac7-95bf-a3256dc1e4ad" width="700"></p><br><br>
+
+3. **Continuous integration testing**<br><br>
+By using pytest extensively you'll be able to have most, if not all, of your project's code being tested, but it can be a bit of a bother to have to always run the tests repeatedly from the command line. This is where tools like Travis CI come in. The CI stands for continuous integration, and it just means that you are continually adding new code to your project. When adding this new code, Travis can automatically run your tests for you and alert you if your changes broke something [1]. Then when you push a fix, Travis CI will run your tests again to double check that your fix was successful. Another great aspect of Travis CI and other CI testing tools is scheduled builds. By scheduling a build your tests can be run periodically even without you adding new code. Scheduled tests are a great way to catch bugs introduced by updates in one of your dependencies [2].<br><br>
+
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/3ee3b26b-9296-486e-87b2-f40990426133" width="700"></td>
+    <td><img src="https://github.com/user-attachments/assets/bf0f65a3-228b-477f-8f98-675d6a9f3663" width="700"></td>
+  </tr>
+</table>
+
+4. **Links and additional tools**<br><br>
+<p align="center"><img src="https://github.com/user-attachments/assets/f339e421-4d11-4327-ae45-9016d662763a" width="700"></p><br><br>
+
+[Sphinx](https://www.sphinx-doc.org/en/stable/)
+[Tarvis CI](https://travis-ci.org/)
+[GitHub](https://github.com/)
+[GitLab](https://github.com/)
+[Codecov](https://codecov.io/)
+[Code Climate](https://codeclimate.com/)
+
+
+
+### Exercises
+<p align="center"><img src="https://github.com/user-attachments/assets/89392904-a316-45c2-a668-1c4aeeebd1bd" width="1000"></p><br><br>
+

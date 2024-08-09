@@ -22,23 +22,34 @@
 3. [Unit testing](#unit-testing)
 4. [Documentation & testing practice](#documentation-testing-practice)
 
-
 # Chapter 1: Software Engineering & Data Science
-1. **Conventions and PEP8**<br><br>
+
+## Conventions and PEP8
 
 # Chapter 2: Writing a Python Module
-1. **Write your first package**<br><br>
-2. **Adding Functionality to your package**<br><br>
-3. **Making your package protable**<br><br>
+
+## Write your first package
+
+## Adding Functionality to your package
+
+## Making your package portable
 
 # Chapter 3: Utilizing Classes
-1. **Adding Classes to a packages**<br><br>
-2. **Adding functionality to classes**<br><br>
-3. **Classes and the DRY principle**<br><br>
-4. **Multilevel Inheritence**<br><br>
 
-# Chapter 4: Maintainbility
-1. **Documentation**<br><br>
-2. **Readability Counts**<br><br>
-3. **Unit testing**<br><br>
-4. **Documentation & testing practice**<br><br>
+## Adding Classes to a package
+
+## Adding functionality to classes
+
+## Classes and the DRY principle
+
+## Multilevel Inheritance
+
+# Chapter 4: Maintainability
+
+## Documentation
+
+## Readability Counts
+
+## Unit testing
+
+## Documentation & testing practice

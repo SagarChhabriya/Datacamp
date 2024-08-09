@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/3340caf5-3d93-4a51-b3c1-b9c99bd3cd97)# Software Engineering Principles in Python
+
+# Software Engineering Principles in Python
 
 ## Table of Contents
 
@@ -44,6 +45,13 @@ So how is it possible to keep up with the many rules defined in PEP 8? Thankfull
 
 The output shows us the exact location of any violations by showing the file name, line number, and column number where the problem occurred. Note that the output does not use zero based indexing. Additionally, pycodestyle outputs a human readable description of the PEP 8 violation and an error code. A complete list of pycodestyle's possible error codes can be seen in the package's documentation.<br><br>
 <p align="center"><img src="https://github.com/user-attachments/assets/b227eb5a-2ceb-495a-a525-31e1a1e84773" width="700"></p>
+
+### Exercises
+<p align="center"> <img src="https://github.com/user-attachments/assets/de971778-8dc4-4bec-aba2-0e54edd15ebb" width="1000"></p>
+<p align="center"> <img src="https://github.com/user-attachments/assets/9f41dd32-dbad-4779-bbe1-67afb343a5cb" width="1000"></p>
+<p align="center"> <img src="https://github.com/user-attachments/assets/7f97c311-5494-4eff-b7d4-78a55acac66d" width="1000"></p>
+
+
 
 # Chapter 2: Writing a Python Module
 

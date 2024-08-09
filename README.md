@@ -209,12 +209,19 @@ In the last lesson you saw that cookiecutter created these two new files, contri
 - The contributing file is either a markdown or reStructured-text file. This is your call out to other developers for help, and is the first place another developer will look if they are interested in assisting with your package. It is up to you what information you choose to include in this file. You might ask potential developers to join a mailing list, or to email you, or how they can get involved via Github. The standard contributing file which cookiecutter creates, is a great place to start, but you can change it if you'd like to send out a different message to potential collaborators.<br><br>
 - The history file is really important for your users. In chapter two, we said that a package's history file is used to figure out which versions of a package will work with your package. There are different terms for this file, you might hear it being called the `history`, `change-log` or `release notes`, but they are all the same thing. The history file will tell your users the important things that have changed between the previous and new releases. This allows them to figure out which versions of your package they should use. <br><br>
 
-![image](https://github.com/user-attachments/assets/be39f1f8-3100-4f3b-887d-51cbc7551eaf)
+<p align="center"><img src="https://github.com/user-attachments/assets/be39f1f8-3100-4f3b-887d-51cbc7551eaf" alt="history" width="700"></p>
 
 When you make changes, and are ready to make a new release, you will need to increase the version number. Only one copy of the package can be associated with each version number. So PyPI won't let you upload a copy with a version number you have used before. There are two places in the package where you must update the version number. The setup-dot-py file and the top level init-dot-py file.The version number in the setup file is used by pip and PyPI. The version number in the init file is included for the user, and it is best-practices to include this. It allows them to print and use the package version.
 
-![image](https://github.com/user-attachments/assets/f7d289f8-5eb6-462f-bcb3-6f1bc48946ee)
+<p align="center"><img src="https://github.com/user-attachments/assets/f7d289f8-5eb6-462f-bcb3-6f1bc48946ee" alt="histroy" width="700"></p>
 
 2. **bumpversion** <br><br>
 These version numbers can be updated simultaneously using the simple bump-version tool. This tool is used from the terminal and will search through your package and increase the version number in appropriate places. You simply need to navigate to the top of your package and run bump-version with the argument major, minor or patch, and it will increase the major, minor or patch number.
-`bump major` `bump minor` `bump patch` 
+`bump major` `bump minor` `bump patch`
+
+
+3. **Makefiles and Classifiers**<br><br>
+There are two last things you should know about before you start developing packages in the wild. Makefiles which will speed up your development, and classifiers which will help people find your package. Inside the setup-dot-py file you will notice that cookiecutter has filled in the classifiers parameter. This is a list of categories for each release of your package. Users on PyPI can search through packages, and filter based on classifiers. Like if they are looking for packages for Python 2, or with a particular license type. Here we have classified that the mysklearn package is currently intended for developers, and is in pre-alpha stage, meaning it's not ready to be used by general users. We state the type of license, the language used in the package, and the versions of Python it is compatible with. This package is for Python 3, so we add this classifier. We also add classifiers for the minor versions 3.6 to 3.8, since these are the specific versions of Python 3 that the package works with. There are lots more classifiers you can use for your package, but you should always include these as a minimum. You can see a full list of classifiers here.
+
+<p align="center"><img src="https://github.com/user-attachments/assets/832cb9fa-e284-4336-8158-3719e908c9ff" alt="classifier" width="700"></p>
+

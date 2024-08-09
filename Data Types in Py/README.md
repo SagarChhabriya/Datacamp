@@ -78,6 +78,10 @@ How to create and utilize dictionaries, including key-value pairs and accessing 
 ![image](https://github.com/user-attachments/assets/55e839c7-a5e7-4f1f-8f55-326bec82229d)
 ![image](https://github.com/user-attachments/assets/78c1089e-cbd2-49bb-8e05-e218e1710be3)
 
+### Exercises
+![image](https://github.com/user-attachments/assets/273551a1-e9ef-41ec-befb-4278c29f6639)
+![image](https://github.com/user-attachments/assets/84b6a24c-c2d9-475d-b3de-0ecb41ea138f)
+![image](https://github.com/user-attachments/assets/4fda719a-0299-490d-9c73-d1fc012ee575)
 
 ## Altering Dictionaries
 Techniques for modifying, adding, and removing entries in dictionaries.
@@ -86,10 +90,14 @@ Techniques for modifying, adding, and removing entries in dictionaries.
 ![image](https://github.com/user-attachments/assets/473828c4-355b-49d5-a594-4bd2301c67ac)
 
 
+
 ## Pythonically Using Dictionaries
 Idiomatic ways to work with dictionaries, leveraging built-in methods and comprehensions.
 ![image](https://github.com/user-attachments/assets/6c2afa58-0b01-462a-8889-c46846d66953)
 ![image](https://github.com/user-attachments/assets/3401834f-f6dc-4305-ab6d-8f4c47c68bc1)
+
+### Exercises
+![image](https://github.com/user-attachments/assets/f7d89964-0d9d-4a22-b387-379aecb17003)
 
 
 ## Mixed Data Types in Dictionaries
@@ -101,12 +109,34 @@ Handling dictionaries that store various data types as values, including nested 
 
 ## Numeric Data Types
 Overview of numeric data types such as integers and floats, including their operations and conversions.
+![image](https://github.com/user-attachments/assets/09a86682-f366-4532-8bba-1968f611434d)
+![image](https://github.com/user-attachments/assets/5f2fd2b9-5c0a-475c-8792-0b6d69103d1c)
+![image](https://github.com/user-attachments/assets/f34c60fc-5ef5-430d-91c6-43035c69f7b9)
+![image](https://github.com/user-attachments/assets/86d2e1e4-3547-4665-9d92-96b8d386cae5)
+![image](https://github.com/user-attachments/assets/795e76d2-9e42-4a1c-bc95-ac31bc3118d7)
+
+
 
 ## Booleans - The Logical Data Type
 Explanation of boolean values (`True` and `False`), and their role in logical operations and conditional statements.
+![image](https://github.com/user-attachments/assets/1e6d4661-6001-415c-b84f-e19eff3f8301)
+![image](https://github.com/user-attachments/assets/36cfc9d9-c1f8-4fbb-96f9-bb92ba232301)
+![image](https://github.com/user-attachments/assets/64be9293-4c4d-439b-9bbc-719da8c52cfd)
+![image](https://github.com/user-attachments/assets/14a66798-e2d2-404b-83ba-e5c88c544a96)
+![image](https://github.com/user-attachments/assets/68d75d09-3f45-41d7-8e88-adf4950d244d)
+
 
 ## Sets (Unordered Data with Optimized Logic Operations)
 Introduction to sets, their unique properties, and how they are used for efficient logic operations and membership testing.
+![image](https://github.com/user-attachments/assets/1a58e230-0512-452c-9b2f-d8e49673410c)
+![image](https://github.com/user-attachments/assets/e038959a-8645-435b-af58-6c8af78f7691)
+![image](https://github.com/user-attachments/assets/65b96f1d-6166-41ba-9b45-1f830012b1ee)
+![image](https://github.com/user-attachments/assets/267528f1-1d49-419e-8077-91bf644e1adf)
+![image](https://github.com/user-attachments/assets/d2273036-a335-44e9-82e3-d391cd0a0673)
+![image](https://github.com/user-attachments/assets/acde8c97-f88a-49d5-8e45-b477bfeb23dc)
+![Uploading image.png…]()
+
+
 
 # Chapter 4: Advanced Data Types
 

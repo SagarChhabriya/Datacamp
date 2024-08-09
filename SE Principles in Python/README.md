@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/4aae289d-0510-49ab-ada9-30a023b66bf3)
+
 # Software Engineering Principles in Python
 
 ## Table of Contents
@@ -79,10 +79,40 @@ With all the setup we've done so far, importing the package is a breeze. At the 
 <p align="center"><img src="https://github.com/user-attachments/assets/801e31e8-2b41-4ebf-9011-111e4d2bf3f8" width="700"></p>
 
 ### Exercises
-<p align="center"><img src="https://github.com/user-attachments/assets/87f10653-5e63-4996-90e4-02092ba8786b" width="700"></p>
-<p align="center"><img src="https://github.com/user-attachments/assets/bf85677d-c3dd-42b0-a656-f58eb9d28f02" width="700"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/87f10653-5e63-4996-90e4-02092ba8786b" width="1000"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/bf85677d-c3dd-42b0-a656-f58eb9d28f02" width="1000"></p>
 
 ## Adding Functionality to your package
+
+1. **Package structure**<br><br>
+To start, let's again look at the file structure we'll be using. Here we've added a file to our package's directory named utils dot py. Again, when we import and work with our resulting package we'll be in the my_script file that's in the same directory as our package. Note that we can choose a different name than utils, but keep in mind that file names should follow the same conventions as package naming. That is, file names should be all lower case and avoid underscores unless it improves readability or if it's a special case such as our package's init file.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/ddb74e12-9243-4f00-8529-e22de3e87f14" width="700"></p><br><br>
+
+2. **Adding functionality**<br><br>
+With the right structure in place, the next step is to write some code. Here, in our utils dot py file, we write a function that prints one of two possible statements based on user input. Our utils file is known as a submodule and we can import and with a dot notation syntax of the form: package name dot submodule name dot function name. In this example, we call my_package dot utils dot we_need_to_talk.
+
+<p align="center"><img src="https://github.com/user-attachments/assets/e71f4e84-3f77-44fc-9365-a383c71fa735" width="700"></p>
+
+3. **Importing functionality with __init__.py**<br><br>
+Alternatively, we can use our package's init file to make our utils' function more easily accessible by the user. To do this, we import our function in our init file as you see here. The dot notation we use when writing dot utils is known as a relative import and it must be used when packaging in Python versions 3 and above. Importing our function in the init file saves some typing when we want to import and use our function. We're now able to call my_package dot we_need_to_talk without including the additional reference to our utils submodule, importing the function in the init file took care of this reference for us.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/b70b7f2b-4325-4ce2-b361-bc47656db37c" width="700"></p>
+
+3. **Extending package structure**<br><br>
+In our example, we added a single file, or submodule, to our package, but we can extend this structure indefinitely to meet our needs. However, when creating larger packages you must be more mindful about organization. When working with multiple submodules should you import them all in init? As a general rule, you should import your package's key functionality in your init file to make it directly and easily accessible. Less central functionality can be accessed by users through the longer submodule dot syntax we saw earlier. The decision of what is 'key' functionality is a gray area, and because of this, there isn't always a clear best way to organize your package. As a package developer, you'll need to use your judgment to decide what you think will give your users the best experience.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/bfae7523-e212-4f4e-b87b-fe007e568d49" width="700"></p><br><br>
+
+In addition to adding additional submodules, you can also build out packages inside your package! These are known as subpackages. Notice how the subpackage still follows the packaging rules of being a directory with an init file. We won't be covering subpackages in depth in this course but exposure to these different structures can be helpful when looking at someone else's code.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/226ea9b4-2f53-47fa-83d7-f60c3b6834a2" width="700"></p>
+
+### Exercises
+<p align="center"><img src="https://github.com/user-attachments/assets/e3173812-8070-4f7a-b21e-c64f0fbe2c28" width="700"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/95434731-a3b4-4bf1-b057-32f9c7adb32d" width="1000"></p>
+
+
 
 ## Making your package portable
 

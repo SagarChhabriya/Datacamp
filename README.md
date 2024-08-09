@@ -225,3 +225,14 @@ There are two last things you should know about before you start developing pack
 
 <p align="center"><img src="https://github.com/user-attachments/assets/832cb9fa-e284-4336-8158-3719e908c9ff" alt="classifier" width="700"></p>
 
+4. **What are Makefiles for?**<br><br>
+You will notice that cookiecutter also created a Makefile from the template. Throughout this course you were using a lot of terminal commands. Sometimes these commands can be very repetitive, and sometimes hard to remember. Can you remember exactly what terminal commands you used to upload your distributions to PyPI? This is where the Makefile comes in. Makefiles are kind of like Python modules. You can write functions inside them, but these functions are used from the terminal. Inside the Makefile, cookiecutter has added a bunch of functions like this dist function. This function runs the setup-dot-py file to build source and wheel distributions for your package. There is also a clean-build function, which deletes the old distribution files so you can safely create new ones for a new release. There is also the test function, which simply runs pytest, and the release function which uploads your newest distributions to PyPI.
+
+<p align="center"><img src="https://github.com/user-attachments/assets/532b5858-84e6-46f4-827a-0894ce973a5a" alt="makefile" width="700"></p>
+
+5. **How do I use the Makefile?** <br><br>
+You can use the makefile functions by navigating to the top of your package and using the command make followed by the function name.So to build new source and wheel distributions, you would type make dist into the terminal and run this.<br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/33097568-416f-47c1-ae8e-2570d30d64f4" alt="makefile" width="700"></p><br><br>
+
+You can also get a summary of the commands available in the Makefile by using the make `help command`. This lists the functions in the makefile as well as what they do.

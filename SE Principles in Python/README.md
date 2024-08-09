@@ -213,6 +213,38 @@ Now let's see how to actually write a child class that uses inheritance. You'll 
 
 ## Multilevel Inheritance
 
+1. **Creating a Tweet Class**<br><br>
+Great job on creating the SocialMedia class for your package. Thanks to the Document class and inheritance you were able to quickly build up the class for a more specific task, but what if we wanted to go even more specific.The SocialMedia class has some general functionality dealing with hashtags and mentions that works across multiple social media platforms. If we wanted to include functionality about retweets, it wouldn't be appropriate to include in the general class; instead, we can create a Tweet class. So how can we do this without losing the benefits of both the Document and SocialMedia classes? `With inheritance again of course!`. <br><br>
+
+2. **Multilevel inheritance**<br><br>
+We've seen before that a child class can inherit from a parent class. We can continue the family tree again with inheritance. With multilevel inheritance, our child class is all grown up and can its functionality onto its children.Thanks to inheritance we pass along the traits of all prior classes in the family tree. Note, that in the graphic we only have one inheriting class at each level, but we are by no means limited to this. Multiple classes can inherit from the same parent.In fact, one child class can inherit from multiple parents. This more advanced OOP concept is known as `multiple inheritance`. We won't be covering it in this course, but it's good to familiarize yourself with the definition in case you hear of it out in the wild.
+
+<table>
+  <tr>
+    <td><p align="center"><img src="https://github.com/user-attachments/assets/b437c2ce-bae5-4b55-a367-940fa4b36a4e" width="500"></p><br><br></td>
+    <td><p align="center"><img src="https://github.com/user-attachments/assets/afbb318e-b1be-44fd-8372-1f8a174492b8" width="500"></p><br><br></td>
+  </tr>
+</table>
+
+
+3. **Multilevel inheritance and super** <br><br>
+Let's code up an example of multilevel inheritance. We'll start with the inheritance pattern we've seen before. Here we define a Parent and Child class that inherits from the Parent. We could do this differently, by using the super function. Instead, of directly calling the __init__ method of Parent we use the super function. This makes no functional difference in our code here but it has some advantages in maintainability and when implementing multiple inheritance. However, there are some `gotchas` that can arise with super and multiple inheritance; you can check out [Learn more about multiple inheritence & super()](https://www.datacamp.com/community/tutorials/super-multiple-inheritance-diamond-problem) companion DataCamp tutorial to learn more about it.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/c9299a10-3c69-443d-ad7f-4b5087312640" width="700"></p><br><br>
+
+Let's continue the family tree, to create a Grandchild class that inherits from SuperChild we use the same super syntax in its __init__ method, and voila. If we create an instance of Grandchild we can see from the output that each __init__ method in the family tree was called.
+
+<p align="center"><img src="https://github.com/user-attachments/assets/88b1c390-851a-4387-884d-9759eaeeb56c" width="700"></p><br><br>
+
+
+4. **Keeping track of inherited attributes**<br><br>
+If you're using inheritance it's sometimes hard to remember what attributes and methods your class has at the end of it all. If you're using an IDE, then generally you can use tab complete to get a list of suggestions. However, if you want to get the info from the console, you can use either help or the dir function. help is a good option in most cases, but it will only include public methods in it's output. Using dir will print a fairly exhaustive list of what your class has under the covers. The list includes methods that come with our class object by default. Near the end of the list, you see all the methods and attributes that you personally programmed into the SocialMedia class. dir can definitely come in handy, but a warning from the documentation, "dir is supplied primarily as a convenience for use at an interactive prompt." So it's not advised to use it in your scripts.<br><br>
+
+### Exercises
+
+<p align="center"><img src="https://github.com/user-attachments/assets/725555e4-911e-4e53-9d56-a594c2f9cb82" width="1000"></p><br><br>
+<p align="center"><img src="https://github.com/user-attachments/assets/0276b961-c5f9-4f81-96c2-e4a33c2f5f02" width="1000"></p><br><br>
+
 # Chapter 4: Maintainability
 
 ## Documentation

@@ -236,3 +236,7 @@ You can use the makefile functions by navigating to the top of your package and 
 <p align="center"><img src="https://github.com/user-attachments/assets/33097568-416f-47c1-ae8e-2570d30d64f4" alt="makefile" width="700"></p><br><br>
 
 You can also get a summary of the commands available in the Makefile by using the make `help command`. This lists the functions in the makefile as well as what they do.
+
+### Exercises
+<p align="center"><img src="https://github.com/user-attachments/assets/cf79d355-a78c-4c84-b05a-97adb2281a49" alt="exercise" width="700"></p><br><br>
+commands: `make clean` `make test` `make dist`

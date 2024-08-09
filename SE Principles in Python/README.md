@@ -143,6 +143,27 @@ An example of when install_requires can differ is if you want to specify where p
 
 # Chapter 3: Utilizing Classes
 
+1. **Object oriented programming** <br><br>
+We'll now look at how you can use classes to strengthen your package's functionality. Object Oriented Programming, or OOP, is a great way to write modular code, and reap the benefits of modularity such as easily understood and extensible code. We'll cover some aspects of OOP, but if you want a deeper dive I recommend the dedicated DataCamp courses. Let's jump into some code.
+
+2. **Anatomy of a class** <br><br>
+In python, OOP can be utilized by writing classes. Here we see a minimal class implementation. To start we use the keyword class followed by the name of our class. According to PEP8, our class name should be written in camel case, that is, our name should start with a capital letter and every word in the name should have a capital letter as well. Unlike function and package names, class names should never contain underscores. Next, is some documentation that will appear when a user calls help on our class. We'll cover the details of this particular documentation formatting later in the course. Last, we see a function with a familiar name, __init__. Similarly to your package's __init__.py file, this will initialize everything when a user wants to leverage your class. You might have noticed we use a variable named self, we'll get back to this in a couple slides.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/34d255de-37f1-4c55-bad4-3917aca0408c" width="700"></p><br><br>
+
+3. **Using a class in a package**<br><br>
+To make our class easily accessible we can add it to our init file just like we've done with functions before. We use relative import syntax to import MyClass from the 'my class' dot py file in the same directory, we can now import the package and access MyClass easily. Now let's create what's known as an instance of MyClass. To do this we call MyClass like a function and supply a string to the value parameter. Calling our class like this tells Python that we want to create an instance of our class by using the init method. Recall that MyClass's init method set the contents of value to a variable we referenced as self dot attribute. Users can access this attribute by referencing my underscore instance dot attribute. Note, nowhere in this script do we see the self-object that we used when defining our class.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/986fd7e5-065e-49ee-bb09-ac7b8d1a49eb" width="700"></p><br><br>
+
+4. **The self convention**<br><br>
+Let's look more in depth at the use of self in our class's init method. Self is, in essence, a way to refer to a class instance even though we don't know what the user is actually going to name their instance. When defining typical class instance methods, like __init__, self is the first argument. However, if you recall creating an instance of MyClass, when using __init__, the user doesn't need to pass a value to this self argument; this is done automatically behind the scenes. Once in the method body, we can use self to access or define attributes. The user can then access these attributes by using their class's name in place of self, like we did in our script. Technically we can use a different word than self, but this a very strong PEP8 convention and not abiding by it will make your code very hard to read by your collaborators.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/3fe06abd-a817-4b31-b241-57b5da447eb6" width="700"></p><br><br>
+
+
+
+
 ## Adding Classes to a package
 
 ## Adding functionality to classes

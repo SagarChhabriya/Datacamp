@@ -205,6 +205,12 @@ Now let's see how to actually write a child class that uses inheritance. You'll 
 
 <p align="center"><img src="https://github.com/user-attachments/assets/a3b14e41-d27c-4996-b6db-c0d421471dc5" width="700"></p><br><br>
 
+### Exercises
+
+<p align="center"><img src="https://github.com/user-attachments/assets/abe1f8c4-6de8-4141-9b10-7208185ce64e" width="700"></p><br><br>
+
+`Note: The call to the constructor of parent class with the parameters same as the child class.`
+
 ## Multilevel Inheritance
 
 # Chapter 4: Maintainability

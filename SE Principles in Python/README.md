@@ -143,6 +143,8 @@ An example of when install_requires can differ is if you want to specify where p
 
 # Chapter 3: Utilizing Classes
 
+## Adding Classes to a package
+
 1. **Object oriented programming** <br><br>
 We'll now look at how you can use classes to strengthen your package's functionality. Object Oriented Programming, or OOP, is a great way to write modular code, and reap the benefits of modularity such as easily understood and extensible code. We'll cover some aspects of OOP, but if you want a deeper dive I recommend the dedicated DataCamp courses. Let's jump into some code.
 
@@ -162,11 +164,25 @@ Let's look more in depth at the use of self in our class's init method. Self is,
 <p align="center"><img src="https://github.com/user-attachments/assets/3fe06abd-a817-4b31-b241-57b5da447eb6" width="700"></p><br><br>
 
 
-
-
-## Adding Classes to a package
-
 ## Adding functionality to classes
+
+1. **Extending Document class**<br><br>
+Let's look at our current definition of Document and talk about how we can improve its functionality. Right now the class is just a container for the user provided text; this doesn't add much value for our user. In order for our Document class to be more useful, we can add more attributes & methods besides __init__. For example, let's say that in our workflow we always want to tokenize our documents as a first step. Tokenization is a common step in text analysis, it is the process of breaking up a document into individual words, also known as tokens.As we've learned, __init__ is what's called when a user wants to create an instance of Document. This would be a convenient location to put a tokenization step. Placing the tokenization process inside of __init__ will ensure our Document is tokenized as soon as it is created, and this will save your user's the trouble of thinking about this step.<br><br>
+
+Our new __init__ method might look something like this. You can see that we added a line that calls self dot underscore tokenize and dumps the output into an attribute named tokens. So where does underscore tokenize come from? and why does it have an underscore in front of it?<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/278afcb3-1c45-46be-95bc-e91a043166e0" width="700"></p><br><br>
+
+2. **Adding _tokenize() method**<br><br>
+Let's first answer the question of where the method came from. Since this course isn't focused on teaching text analytics, we aren't going to cover the tokenization function implementation; we'll simply import a function to do it for us. In a way, this demonstrates the beauty of modularity and python's community. Often times there are functions already written by someone in the community, and all you need to do is find out where they are and import them for your own use case. Moving on to the definition of underscore tokenize. We only pass one parameter to the function, the prescribed self convention that will represent an instance of the Document object. Since the tokenize function is already written, all that's left to do is call it on the text attribute. And voila! The tokenization process will now be completed automatically as soon as a user creates a Document instance. So why did we use a leading underscore when naming _tokenize?<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/d9c9f568-ed9b-4884-981c-1b1a2014603b" width="700"></p><br><br>
+
+3. **Non-public methods**<br><br>
+The reason we added the tokenization process to the __init__ method is that we wanted tokenization to happen immediately without the user having to think about it. Because of this, the user doesn't need to call underscore tokenize themselves; in other words, this method doesn't need to be 'public' to the user. According to PEP 8, non-public methods should be named with a single leading underscore. This signifies to the user that the method is intended for internal use only. Users can still use non-public methods in their own workflow, but they must do so at their own risk since the developer did not intend for them to do so.<br><br>
+
+4. **The risks of non-public methods**<br><br>
+The risks of using a non-public method in your own workflow include: little or no documentation and the function's input or output might change without warning when the developer updates their package.<br><br>
 
 ## Classes and the DRY principle
 

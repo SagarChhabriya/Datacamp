@@ -186,6 +186,25 @@ The risks of using a non-public method in your own workflow include: little or n
 
 ## Classes and the DRY principle
 
+1. **Creating a SocialMedia Class**<br><br>
+To do this let's make a SocialMedia class that performs the same functions as the Document class, but can additionally analyze social media specific things like hashtags. However, when making this SocialMedia class we want to preserve the Document class as is to be used for more general analysis. So, how can we do this? A first guess might be to copy-paste the contents of the Document class. This violates what is known as the DRY principle in Software Engineering.The DRY principle is a great rule that, if followed, can help you write modular, readable code. `DRY stands for: Don't Repeat Yourself`.<br><br>
+
+2. **DRY**<br><br>
+There are many ways to follow this rule such as writing re-usable functions, classes, and packages. The benefits of staying DRY are not only saving time by reusing code, but also if you copy-paste code, and later find a bug, you have to remember everywhere you've pasted the buggy code and fix each instance individually. If you stay DRY you only need to fix the bug once.<br><br>
+
+3. **Intro to inheritance**<br><br>
+In the case of extending the Document class to be a SocialMedia class, we can stay DRY by using the Object Oriented Programming concept of inheritance. With inheritance, we start with a parent class and we pass on it's functionality to a child class. The child class inherits all the methods and attributes of its parent, and we're able to add additional functionality without affecting the parent class.<br><br>
+
+4. **Inheritance in Python**<br><br>
+So how do we leverage inheritance in Python? To start let's see how the child SocialMedia class fits into the package structure. It will live as a single file named after the SocialMedia class at the same level as the rest of the package's code.
+
+<p align="center"><img src="https://github.com/user-attachments/assets/08c6025b-c96a-4469-a2a3-5418244a4fee" width="700"></p><br><br>
+
+5. **Generic Example**<br><br>
+Now let's see how to actually write a child class that uses inheritance. You'll be writing the code for the SocialMedia class, so we'll stick to a generic example. First, we import the ParentClass for use in defining our ChildClass. To let Python know we're using inheritance, we pass the ParentClass as an argument in our class statement. Last, we call our ParentClass's __init__ method. Remember, __init__ builds an instance of a class and it also accepts self as its first argument. With this call, we're building an instance of ParentClass and storing it right back into self. This means that self now has all the methods and attributes that an instance of ParentClass would. We can now use self as normal to build in additional functionality unique to ChildClass. Here, we just add an attribute. With our definitions, we can now create an instance of our new ChildClass as we've seen before, and then access attributes from both the parent and the child. Using inheritance like this can lead to short, easy to read definitions of children classes that are jam-packed with the functionality of their parents.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/a3b14e41-d27c-4996-b6db-c0d421471dc5" width="700"></p><br><br>
+
 ## Multilevel Inheritance
 
 # Chapter 4: Maintainability

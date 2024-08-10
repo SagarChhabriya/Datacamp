@@ -1,5 +1,4 @@
-
-# Table of Contents
+# Introduction to APIs in Python (RESTful)
 
 ## Chapter 1: Making API Requests with Python
 1. [Introduction to APIs](#introduction-to-apis)
@@ -129,14 +128,148 @@ A brief overview of what APIs are and how they enable communication between soft
 # Chapter 2: More API Request Concepts
 
 ## API Authentication
-An introduction to different methods of authenticating API requests, including API keys and OAuth.
+
+1. **API Authentication**<br><br>
+APIs we interact with frequently contain private, personal, or sensitive data. To protect this sensitive information, APIs require clients to authenticate before granting access. Let's explore how authentication works.<br><br>
+
+2. **Accessing sensitive data**<br><br>
+The album API, which contains our private album collection, requires authentication to verify the request's origin. Attempting to access this protected API without proper identification will result in a 401 error indicating that we need authorization to access this API resource.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/11b68497-0041-406f-9349-35b55c99b934" width="700"></p>
+
+
+3. **Accessing sensitive data**<br><br>
+When we add information to the request to identify ourselves, the server knows it's us and responds as expected, with a 200 OK status code. We have multiple options to add this information to an API request, let's learn the most common ones!<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/743d5591-fc21-4563-9cc8-0b5a2644db78" width="700"></p>
+
+4. **Authentication methods**<br><br>
+Basic Authentication is the simplest form of API authentication. It uses a username and password for authentication. This method is easy to integrate but also the least secure, as it sends your password unencrypted over the internet to the server. API Key or Token Authentication works by attaching a unique authentication key or token to each request. API keys are simple to implement but pose a security risk if compromised, as they also transmit unencrypted data. JWT or JSON Web Token Authentication is similar to API key authentication, but the main difference is that a JWT token has a limited lifespan and can contain additional encrypted data, such as user information. OAuth 2.0 is a comprehensive authentication framework that allows fine-grained access to resources without sharing any credentials. Which authentication mechanism and credentials you have to use depends on the API server, the documentation of the API you're using usually contains information on how to authenticate. Now, let’s learn how to use Basic and API Key Authentication with the requests package.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/91cb0a7c-85fb-48c4-9fe5-0caa11836175" width="700"></p>
+
+5. **Basic authentication**<br><br>
+To use basic authentication we need to add an authorization header to the request we are sending to the API. This header must contain a base64-encoded combination of our username and password. Base64 encoding is a two-way algorithm that anyone can easily decode, so unfortunately it provides no additional security. Implementing basic authentication using the requests package is easy. Instead of adding a header and doing the base64 encoding yourself, you can just pass a tuple containing your username and password using the auth function argument, requests takes care of all the encoding and adds the header.
+
+<p align="center"><img src="https://github.com/user-attachments/assets/a90dc262-26c2-4b08-b5ac-b7d22a6f0966" width="700"></p>
+
+6. **API key/token authentication**<br><br>
+There are two common options to add the authentication token to our request. The first option is simply adding the API key to the URL as a query parameter. In this example, we add the access_token query parameter to the URL using the params function argument. The second option is by adding an authorization header. This is usually the preferred method. For this the requests packages doesn't offer an out of the box method like for Basic Authentication, so we need to add the header ourself using the headers function argument.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/15aedc66-56bd-46f0-a8e6-e9c1a014ff3d" width="700"></p>
+
+
+### Exercises
+<p align="center"><img src="https://github.com/user-attachments/assets/b7c0add3-ab08-4c8b-92a9-912f8f586a43" width="1000"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/29d2f916-5483-487c-90f4-10bc71a868f6" width="1000"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/65e01a62-e36c-4fd2-b9d3-ebae0f471e03" width="1000"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/4ee65aaa-5aca-4f83-be1b-24402ef11f8d" width="1000"></p>
+
 
 ## Working with Structured Data
-How to handle and parse structured data formats like JSON and XML received from APIs.
+
+1. **Working with structured data**<br><br>
+So far, we have only used simple requests, such as getting song lyrics represented as a string of text. In reality, we often need to exchange more complex data structures. Let's learn how to handle these kinds of API requests.<br><br>
+
+2. **Complex data structures**<br><br>
+The lyric API returns the entire lyric as plain, unstructured text. Complex data types, like music albums, require more structure to transmit effectively. That's because albums have multiple properties, such as an ID, title, artist, or list of tracks.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/eaa11dab-9ef2-465c-ace1-61585df9a111" width="700"></p>
+
+
+3. **Complex data structures: JSON**<br><br>
+Luckily, we have a few handy data formats to make working with structured data easier. In this examples we are using JSON, which stands for Javascript Object notation. It is the most common and a very lightweight format used by web APIs. JSON is natively supported by many programming languages and easily readable by both humans and machines. JSON is one of the many types we call content-types, mime-types, or media-types. These terms are used interchangably, but in this course we will use the term "content type". Other formats we might encounter are XML, CSV, and YAML.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/bdba924d-c4b4-4dae-95f0-27319c47091d" width="700"></p>
+
+
+4. **From Python to JSON and back**<br><br>
+In order to use a Python object with a Web API, we first need to convert it to a JSON string so we can safely transmit it with the request or response. Transforming a Python object to JSON is called encoding. Decoding is the reverse, turning a JSON string back into a Python object. In Python, the built-in `json` package can encode and decode JSON. `json.dumps()` turns a Python object into a JSON string, while `json.loads()` converts a JSON string back into a Python object.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/db19219c-6ea5-4a81-b17d-617701048733" width="700"></p>
+
+
+5. **Requesting JSON data**<br><br>
+Let's see how the requests Python package can help us work with APIs using JSON as data format. Using the get function, we request a lyric from the API. Without adding additional headers, the server will respond in plain text. When we add an accept header with the value `application/json`, the server will respond with JSON text. We can inspect the JSON text by just printing the response.text. Using the json() function on the response object, we can now decode the JSON text into a Python object and easily print the artist attribute.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/75f40311-c813-414b-895c-71a271ad34d7" width="700"></p>
+
+
+6. **Sending JSON data**<br><br>
+We've now learned how to receive JSON data, but what about sending JSON data? The requests package can also help here. When using the `json` function argument to send the playlist object, requests will automatically add the necessary content-type headers and do all of the encoding for us. Let's inspect the request object after sending the playlist object to the playlists API. Notice that the content-type header is set to `application/json` automatically. We didn't need to add any headers or encode objects to JSON strings.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/671592ba-fc24-4f09-9ec2-037e112b1046" width="700"></p>
+
+
+### Exercises
+<p align="center"><img src="https://github.com/user-attachments/assets/673f649b-22cf-4fa9-b45e-b9a8872d8e9b" width="1000"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/bc652135-0b8a-4cf6-a227-6020882b3662" width="1000"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/763ef84f-2626-47b3-808e-c3125bc70d7f" width="1000"></p>
+
+
 
 ## Error Handling
-Techniques for managing and responding to errors that occur during API requests, including retries and error messages.
+
+1. **Error handling**<br><br>
+When integrating with a web API, it's important to consider what might go wrong. After all, we're communicating with a web API over the internet, so things can go wrong. This video will explore how to gracefully handle errors and prevent common issues. Let's dive in!<br><br>
+
+2. **Error status codes**<br><br>
+To determine if an error occurred or if the request was successful, REST APIs utilize the `status_code` in the response. A status code in the 4XX or 5XX range indicates an issue. Errors in the 400 range are client errors, indicating the request from the client could not be handled properly. These are usually caused by sending a wrong header or failing to authenticate. Typically, clients can handle or manage these errors easily by fixing the request. Errors in the 500 range indicate server problems. These errors are beyond the client's control, as the server acknowledged the request but faced difficulties handling it due to server-side issues. These are typically caused by server overload, or configuration errors. Clients cannot resolve these errors but should address them in the code to prevent unexpected behavior or bugs.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/aa09b2ae-7148-4685-9170-dd65df97e03e" width="700"></p>
+
+
+3. **Error status codes: examples**<br><br>
+Some common error codes in the 400 range are 401, which means we're trying to access a protected resource and need to add authentication to our request. 404 means the resource we are trying to access does not exist on the server so we are doing something wrong. 429 will be returned when we are sending more requests to the server than it's able to handle, in this case we need to implement a rate limiter to spread out our requests over a larger period of time. Common 500 error codes are 500 Internal Server Error, which is a common catch-all error code that indicates something on the server went wrong. 502 and 504 are also errors we might encounter and are related to the server infrastructure.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/710b29b2-1c44-4a2a-abcf-fe248e1baa43" width="700"></p>
+
+
+4. **Handling errors**<br><br>
+The simplest way to handle API errors is by checking the response status code for any codes in the 400 and 500 ranges, which indicate an error has occurred. We can then use this status code to decide how to handle the error. However, this approach is overly simplified. An error might occur even before the request reaches the server, in which case we would not receive a response containing an error code. Fortunately, the requests library raises a ConnectionError in this case, which we can check for using a try/except block. To properly check for any errors with the API request, we should combine both approaches. The requests library makes this process straightforward.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/d3381e3b-96a8-417d-ba5b-9ef3977265e1" width="700"></p>
+
+
+5. **raise_for_status()**<br><br>
+The requests library has a convenient feature that automatically raises errors for any responses containing an error status code. By enabling this mode using the `raise_for_status()` function immediately after sending the request, any error code returned from the API will raise an `HTTPError`. This way, after checking for Connection errors, we can easily also check for any HTTPErrors that might have occurred.<br><br>
+<p align="center"><img src="https://github.com/user-attachments/assets/7e68eb55-cde5-4ad9-87d0-bfb802507a41" width="700"></p>
+
+
+### Exercises
+<p align="center"><img src="https://github.com/user-attachments/assets/a1683e70-97b3-42f5-9221-1af6e7df337a" width="1000"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/ceff49c6-e543-42d6-96b7-6d92a5fd4be0" width="1000"></p>
+
+[Set of included Exceptions](https://requests.readthedocs.io/en/latest/user/quickstart/#errors-and-exceptions)
+
+<p align="center"><img src="https://github.com/user-attachments/assets/a16383f9-e9be-4586-ba13-cdaed27b6257" width="1000"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/0e43632b-6140-4dc9-9e7f-879b97ac1f8f" width="1000"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/0eccc3c4-c57a-4795-8bf5-fe5b64111af2" width="1000"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/f882a189-f1ff-47be-99cb-d57c66dfc0e5" width="1000"></p>
 
 
 
+
+## Final Thoughts
+
+1. **API basics**<br><br>
+In this course we learned all about the role APIs play in modern application development as well as how they enable data sharing over a network or the internet. We learned about the three most common types of Web APIs and explored REST APIs in depth. We explored how we can create and structure a URL with path and query parameters to allow us to use APIs more effectively. Then we looked under the hood of the request and response messages a client and a server exchange to communicate. Lastly, we learned about the different types of HTTP verbs we have available in order to read, create, update, and delete resources using an API.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/d4aa2ec1-7285-4f22-8ef2-b6710303bc1c" width="700"></p>
+
+
+2. **APIs with Python**<br><br>
+We explored how we can make integrating with APIs easier using the open-source requests package. We learned how to perform GET, POST, PUT, and DELETE requests and how we can pass a Python dictionary with query parameters using the params argument of any HTTP methods to add query parameters to the URL. Later, we looked at what role headers play in request and response messages and how we can use them to do "content negotiation", allowing us to request content from an API in a different format like JSON or XML. Status codes are a crucial part of API response messages as they inform us how the server responded to our API request, if an error occured or if everything went fine. We learned how we can retrieve the status code from the API response object.<br><br>
+<p align="center"><img src="https://github.com/user-attachments/assets/2a35d0db-67ff-46ff-b740-d78646451c2a" width="700"></p>
+
+
+3. **Advanced topics**<br><br>
+Diving deeper, we learned how to authenticate with APIs that contain private, sensitive, or personal data. We also learned the two most common authentication mechanisms: Basic Authentication and API key or token-based authentication. Using headers, we saw how to use both mechanisms using the requests package. We also learned how to send and retrieve data in a more structured format like JSON. This is especially important when working with complex data types, which is often the case. Using the "accept" header, we could retrieve data in a specific format, and using the json function argument, we were also able to send data to the server in the JSON format.<br><br>
+<p align="center"><img src="https://github.com/user-attachments/assets/3bc3a360-5785-4431-8db4-82acdef44f53" width="700"></p>
+
+
+4. **Error handling**<br><br>
+At the very end, we learned how to properly handle situations where things don't go as expected. We learned of the three different types of errors, Connection errors that occur before reaching the server, 400 errors which are client errors and 500 errors which indicate something has gone wrong on the server. We explored 2 ways to handle these errors: first, looking at the response status code, and second, using the more robust "raise_for_error" function, which causes the requests package to raise an exception when something goes wrong.<br><br>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/cf894d81-2dad-4efe-bcde-683921e8112a" width="700"></p>
 

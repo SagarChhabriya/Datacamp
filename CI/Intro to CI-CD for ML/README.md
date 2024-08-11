@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/fbaa9a61-5f8a-4b34-8546-504b61b6b099)# Introduction to CI/CD for ML
+# Introduction to CI/CD for ML
 
 ## Table of Contents
 

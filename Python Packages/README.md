@@ -196,7 +196,7 @@ As you've seen in earlier chapters, a Python package has a lot of additional fil
 Cookiecutter is a command line tool which creates projects from templates. You can use it to create a basic, empty Python package, like this one. These templates can create all of the additional files which your package needs, so you can focus more on the code, and won't need to worry you have forgotten something. You run cookiecutter from the terminal, and pass it the URL of the template you would like to use. The standard template for Python packages is this one. But there are lots more templates you can use choose from.<br><br>
 
 ```python
-cookiecutter https://github.com/audreyfeldroy/cookiecutter-pypackage.git
+pip install cookiecutter https://github.com/audreyfeldroy/cookiecutter-pypackage.git
 ```
 When you run this, it will ask you to fill in some details about the package you are creating. { *We also don't use a command-line interface, so we enter 3 to pick this option. We will include an author file, which is just a list of the package authors.* } cookiecutter creates a new directory with your package name, and fills it with all the files we have covered. Each of these files has good default content. Even the setup-dot-py file has been completely filled out. However, you may still want to make some edits. For example, here the README is a restructured text file rather than markdown. It also adds some extra files we will cover later, like the AUTHORS file, which lists the authors of the package and their contact details.
  

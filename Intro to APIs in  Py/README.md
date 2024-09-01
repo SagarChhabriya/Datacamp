@@ -10,6 +10,11 @@
 2. [Working with Structured Data](#working-with-structured-data)
 3. [Error Handling](#error-handling)
 
+
+## External 
+1. [API Design](#api-design)
+
+
 ---
 
 # Chapter 1: Making API Requests with Python
@@ -273,3 +278,7 @@ At the very end, we learned how to properly handle situations where things don't
 
 <p align="center"><img src="https://github.com/user-attachments/assets/cf894d81-2dad-4efe-bcde-683921e8112a" width="700"></p>
 
+
+# Externel
+## API Design
+![image](https://github.com/user-attachments/assets/b0b630b6-6d81-4d6c-bde6-09230098eda0)

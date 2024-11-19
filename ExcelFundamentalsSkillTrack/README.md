@@ -33,7 +33,7 @@ File: 2_1_naming_ranges.xlsx
 - Data and Time: Date(year, month, date), year(serial_number)
 - Maths and Trig: Round(), Abs(), Sum(),
 - Statistical: Average(), Count(), Min(), Max() 
-9. Rounddown()
+9. Round(), Roundup(), Rounddown()
 ![image](https://github.com/user-attachments/assets/6cd9eeb7-617e-4611-b91f-1665deaf7fac)
 10.   
   

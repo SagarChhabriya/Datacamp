@@ -23,6 +23,8 @@ File: 2_1_naming_ranges.xlsx
 ![image](https://github.com/user-attachments/assets/ae2f73bd-7959-4a1e-9a51-5185098b33cd)
 ![image](https://github.com/user-attachments/assets/0a8f407d-36a2-48c3-a54b-fb8b609c4119)
 
+7. BODMAS, Aggregate Functions
+![image](https://github.com/user-attachments/assets/3f7e6762-0d43-44f8-a6ac-4c6016c8123d)
+![image](https://github.com/user-attachments/assets/df27f06d-5147-46ef-b6f1-013d07147bab)
 
-
-7.  
+8.   

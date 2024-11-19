@@ -27,4 +27,13 @@ File: 2_1_naming_ranges.xlsx
 ![image](https://github.com/user-attachments/assets/3f7e6762-0d43-44f8-a6ac-4c6016c8123d)
 ![image](https://github.com/user-attachments/assets/df27f06d-5147-46ef-b6f1-013d07147bab)
 
-8.   
+8. Chapter 3: Functions
+![image](https://github.com/user-attachments/assets/23d5c9de-2f94-4f1a-ac97-37764b91c172)
+- Text: Left(), Right(), Upper(), Lower()
+- Data and Time: Date(year, month, date), year(serial_number)
+- Maths and Trig: Round(), Abs(), Sum(),
+- Statistical: Average(), Count(), Min(), Max() 
+9. Rounddown()
+![image](https://github.com/user-attachments/assets/6cd9eeb7-617e-4611-b91f-1665deaf7fac)
+10.   
+  

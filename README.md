@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Datacamp
-=======
 # Datacamp Repository
 
 Welcome to the **Datacamp** repository, curated by Sagar Chhabriya. This repository contains a collection of course slides, exercises, and relevant work for the courses of **DataCamp**.
